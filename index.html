@@ -1,37 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>My Kodi Add-ons</title>
-    <script>
-        async function loadFiles() {
-            const repo = "TechXXX/TechXXX.github.io"; // Replace with your repository name
-            const apiUrl = `https://api.github.com/repos/${repo}/contents`;
-
-            try {
-                const response = await fetch(apiUrl);
-                const files = await response.json();
-                const fileList = document.getElementById("file-list");
-
-                files.forEach(file => {
-                    if (file.name.endsWith(".zip")) {
-                        const link = document.createElement("a");
-                        link.href = file.download_url;
-                        link.textContent = file.name;
-                        link.style.display = "block"; // Show each link on a new line
-                        fileList.appendChild(link);
-                    }
-                });
-            } catch (error) {
-                console.error("Error fetching file list:", error);
-            }
-        }
-    </script>
+    <title>Mien toentje</title>
 </head>
-<body onload="loadFiles()">
-    <h1>My Kodi Add-ons</h1>
-    <p>Below is a list of available files:</p>
-    <div id="file-list">
-        <!-- Files will be dynamically loaded here -->
-    </div>
+<body>
+    <h1>Mien Addons</h1>
+    <p>Click the links below to download add-ons:</p>
+    <ul>
+        <li><a href="plugin.video.fenlight-2.0.03.zip">plugin.video.fenlight-2.0.03.zip</a></li>
+        <li><a href="plugin.video.fenlight-2.0.02.zip">plugin.video.fenlight-2.0.03.zip</a></li>
+    </ul>
 </body>
 </html>
